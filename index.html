@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joel Pescador</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Monoton&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet"
+  />
+  </head>
+  <body>
+    <script defer src="js/script.js"></script>
+    <canvas id="canvas"></canvas>
+    <script src="starback.js-main/starback.js-main/docs/starback.global.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const canvas = document.getElementById("canvas");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const starback = new Starback(canvas, {
+          width: canvas.width,
+          height: canvas.height,
+          type: "line",
+          speed: 0.2,
+          frequency: 10,
+          starSize: 5,
+          slope: { x: 0, y: 0.5 }, // Vertical slope
+          directionX: 0, // No horizontal movement
+          directionY: -1, // Move upwards
+          spread: 0,
+          randomOpacity: true,
+          backgroundColor: ["#12100e", "#1a273a"], // Background color
+          starColor: ["#FFFFFF", "#FFFFFF"], // Single color for stars
+          quantity: 150,
+        });
+        console.log(starback);
+      });
+    </script>
+
+    <header class="oculto">
+      <div class="navbar fila">
+        <div class="elementosNav">
+          <ul>
+            <li>
+              <a href="#margen"><span class="dorado">Sobre mi</span></a>
+            </li>
+          </ul>
+        </div>
+        <div class="elementosNav">
+          <ul>
+            <li>
+              <a href="#proyectos"><span class="dorado">Proyectos</span></a>
+            </li>
+          </ul>
+        </div>
+        <div class="elementosNav">
+          <ul>
+            <li>
+              <a href="#"><span class="dorado">Contacto</span></a>
+            </li>
+          </ul>
+        </div>
+  
+      </div>
+    </header>
+
+    <main>
+      <section id="sobre-mi">
+        <div class="blanco">
+          <div class="headline">
+            <div class="caja50">
+              <span class="neon">
+                <span class="cyan">Joel</span> Pescador
+              </span>
+            </div>
+            <div class="caja50">
+              <img
+                id="mifoto"
+                src="images/fotoorla.jpg"
+                alt="Me"
+              />
+            </div>
+            <div class="caja50 achedos">
+              <h2 class="titulo">Desarrollador Web.</h2>
+            </div>
+          </div>
+          <hr />
+          <p class="medium oculto" id="margen">
+            ¡Hola! Bienvenid@ a mi web. Mi nombre es Joel Pescador y soy
+            desarrollador web.</p>
+            <p class="medium oculto"> Durante el último año y medio he trabajado para
+            el Ayuntamiento de Gijón en la escuela taller "Gijón Acompaña". </p>
+            <p class="medium oculto">
+            Durante este tiempo, he participado en varios proyectos. Algunos de
+            ellos son:
+          </p>
+          <br />
+          <br><br>
+
+          <hr id="proyectos"/>
+          <br />
+       
+            <div class="caja100">  
+               <ul class="fifty">
+              <li class="alto">
+                <h2>DATOS ABIERTOS:</h2>
+                <br />
+                <p>
+                  Creación de sitios web para que los datos públicos fueran
+                  accesibles y útiles para la comunidad.
+                </p>
+              </li>
+              </ul>
+              <div class="carrusel fifty">
+                <div id="carrusel1" class="list-wrapper">
+                  <ul class="list">
+                    <li class="item">
+                      <div class="carousel-image-container">
+                        <img
+                          src="images/Tarjetas.png"
+                          alt="Tarjetas ciudadanas"
+                          class="fotosCarrusel"
+                        />
+                      </div>
+                    </li>
+                    <li class="item">
+                      <div class="carousel-image-container">
+                        <img
+                          src="images/Incidencias.png"
+                          alt="Incidencias en vía pública"
+                          class="fotosCarrusel"
+                        />
+                      </div>
+                    </li>
+                  </ul>
+                  <button
+                    class="botonCarru button button--previous"
+                    type="button"
+                  >
+                    <span class="arrow arrow--left"></span>
+                  </button>
+                  <button class="botonCarru button button--next" type="button">
+                    <span class="arrow arrow--right"></span>
+                  </button>
+                  <button
+                    class="botonCarru button button--expand"
+                    type="button"
+                  >
+                    <svg
+                      height="14px"
+                      version="1.1"
+                      viewBox="0 0 14 14"
+                      width="14px"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M2,9 L0,9 L0,14 L5,14 L5,12 L2,12 L2,9 L2,9 Z M0,5 L2,5 L2,2 L5,2 L5,0 L0,0 L0,5 L0,5 Z M12,12 L9,12 L9,14 L14,14 L14,9 L12,9 L12,12 L12,12 Z M9,0 L9,2 L12,2 L12,5 L14,5 L14,0 L9,0 L9,0 Z"
+                        fill="#000000"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <br />
+          <hr>
+
+            <br />
+            <div class="caja100">
+              <ul class="fifty">
+
+           
+              <li class="alto">
+                <h2>APLICACIÓN WEB DEL JARDÍN BOTÁNICO:</h2>
+                <br />
+
+                <p>
+                  Desarrollo de una aplicación web con un mapa interactivo para
+                  enriquecer la visita al jardín botánico.
+                </p>
+              </li>
+            </ul>
+              <div class="carrusel fifty">
+                <div id="carrusel2" class="list-wrapper">
+                  <ul class="list">
+                    <li class="item">
+                      <div class="carousel-image-container">
+                        <img
+                          src="images/Botanico_Ruta_Corta.png"
+                          alt="Ruta corta Botanico"
+                          class="fotosCarrusel"
+                        />
+                      </div>
+                    </li>
+                    <li class="item">
+                      <div class="carousel-image-container">
+                        <img
+                          src="images/Botanico_Ruta_Larga.png"
+                          alt="Ruta larga Botanico"
+                          class="fotosCarrusel"
+                        />
+                      </div>
+                    </li>
+                  </ul>
+                  <button
+                    class="botonCarru button button--previous"
+                    type="button"
+                  >
+                    <span class="arrow arrow--left"></span>
+                  </button>
+                  <button class="botonCarru button button--next" type="button">
+                    <span class="arrow arrow--right"></span>
+                  </button>
+                  <button
+                    class="botonCarru button button--expand"
+                    type="button"
+                  >
+                    <svg
+                      height="14px"
+                      version="1.1"
+                      viewBox="0 0 14 14"
+                      width="14px"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M2,9 L0,9 L0,14 L5,14 L5,12 L2,12 L2,9 L2,9 Z M0,5 L2,5 L2,2 L5,2 L5,0 L0,0 L0,5 L0,5 Z M12,12 L9,12 L9,14 L14,14 L14,9 L12,9 L12,12 L12,12 Z M9,0 L9,2 L12,2 L12,5 L14,5 L14,0 L9,0 L9,0 Z"
+                        fill="#000000"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <br />
+            <hr />
+            <br />
+            <div class="caja100">
+              <ul class="fifty">
+
+         
+              <li class="alto">
+                <h2>APLICACIÓN WEB DE LAS PLAYAS DE GIJÓN</h2>
+                <br />
+
+                <p>
+                  Implementación de una solución para la recogida de datos en
+                  tiempo real sobre el estado meteorológico de las playas de
+                  Gijón.
+                </p>
+              </li>     </ul>
+              <div class="carrusel fifty">
+                <div id="carrusel2" class="list-wrapper">
+                  <ul class="list">
+                    <li class="item">
+                      <div class="carousel-image-container">
+                        <img
+                          src="images/San_Lorenzo.png"
+                          alt="Estado de la playa de San Lorenzo"
+                          class="fotosCarrusel"
+                        />
+                      </div>
+                    </li>
+                    <li class="item">
+                      <div class="carousel-image-container">
+                        <img
+                          src="images/Normas_Playas.png"
+                          alt="Normas en playas"
+                          class="fotosCarrusel"
+                        />
+                      </div>
+                    </li>
+                  </ul>
+                  <button
+                    class="botonCarru button button--previous"
+                    type="button"
+                  >
+                    <span class="arrow arrow--left"></span>
+                  </button>
+                  <button class="botonCarru button button--next" type="button">
+                    <span class="arrow arrow--right"></span>
+                  </button>
+                  <button
+                    class="botonCarru button button--expand"
+                    type="button"
+                  >
+                    <svg
+                      height="14px"
+                      version="1.1"
+                      viewBox="0 0 14 14"
+                      width="14px"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M2,9 L0,9 L0,14 L5,14 L5,12 L2,12 L2,9 L2,9 Z M0,5 L2,5 L2,2 L5,2 L5,0 L0,0 L0,5 L0,5 Z M12,12 L9,12 L9,14 L14,14 L14,9 L12,9 L12,12 L12,12 Z M9,0 L9,2 L12,2 L12,5 L14,5 L14,0 L9,0 L9,0 Z"
+                        fill="#000000"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <br />
+            <hr />
+          </ul>
+          <br />
+          <p>
+            Otros sitios realizados incluyen aquellos proyectos realizados por
+            iniciativa propia en la escuela, tales como la
+            <a href="https://etw23.github.io/" class="links dorado">Web de la E.T.</a> o la
+            <a href="https://etw23.github.io/pluri/index.html" class="links dorado">Web sobre la Pluriculturalidad</a>,
+            cuyos objetivos eran exponer el trabajo que realizado y mostrar y
+            promover la diversidad presente en la escuela.
+          </p>
+          <br /><br /><br />
+          <section id="actualidad">
+            <div class="caja100">
+              <p>
+                Actualmente, curso el Grado Superior de Desarrollo de
+                Aplicaciones Web, lo que me permite estar al día con las últimas
+                tecnologías y metodologías. Disfruto del trabajo en equipo y la
+                colaboración, y siempre estoy buscando formas de innovar y
+                mejorar los procesos.
+              </p>
+            </div>
+          </section>
+        </div>
+       
+      </section>
+      
+    </main>
+    <br><br><br><br><br>
+    <hr class="glowing-btn border0">
+
+    <footer>
+      <div class="caja100">
+          <div class="tercio"> 
+   <a href= "mailto: joelpescadorserrano@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+</svg>
+         
+
+            </a>
+
+        </div>
+        <div class="tercio">
+
+            <a href="https://www.linkedin.com/in/joel-pescador-serrano-b67852313/">
+              <svg xmlns="http://www.w3.org/2000/svg" class="bi-envelope" fill="currentColor" x="0px" y="0px" width="100" height="100" viewBox="0 0 64 64">
+                <path d="M 9 4 C 6.2504839 4 4 6.2504839 4 9 L 4 41 C 4 43.749516 6.2504839 46 9 46 L 41 46 C 43.749516 46 46 43.749516 46 41 L 46 9 C 46 6.2504839 43.749516 4 41 4 L 9 4 z M 9 6 L 41 6 C 42.668484 6 44 7.3315161 44 9 L 44 41 C 44 42.668484 42.668484 44 41 44 L 9 44 C 7.3315161 44 6 42.668484 6 41 L 6 9 C 6 7.3315161 7.3315161 6 9 6 z M 14 11.011719 C 12.904779 11.011719 11.919219 11.339079 11.189453 11.953125 C 10.459687 12.567171 10.011719 13.484511 10.011719 14.466797 C 10.011719 16.333977 11.631285 17.789609 13.691406 17.933594 A 0.98809878 0.98809878 0 0 0 13.695312 17.935547 A 0.98809878 0.98809878 0 0 0 14 17.988281 C 16.27301 17.988281 17.988281 16.396083 17.988281 14.466797 A 0.98809878 0.98809878 0 0 0 17.986328 14.414062 C 17.884577 12.513831 16.190443 11.011719 14 11.011719 z M 14 12.988281 C 15.392231 12.988281 15.94197 13.610038 16.001953 14.492188 C 15.989803 15.348434 15.460091 16.011719 14 16.011719 C 12.614594 16.011719 11.988281 15.302225 11.988281 14.466797 C 11.988281 14.049083 12.140703 13.734298 12.460938 13.464844 C 12.78117 13.19539 13.295221 12.988281 14 12.988281 z M 11 19 A 1.0001 1.0001 0 0 0 10 20 L 10 39 A 1.0001 1.0001 0 0 0 11 40 L 17 40 A 1.0001 1.0001 0 0 0 18 39 L 18 33.134766 L 18 20 A 1.0001 1.0001 0 0 0 17 19 L 11 19 z M 20 19 A 1.0001 1.0001 0 0 0 19 20 L 19 39 A 1.0001 1.0001 0 0 0 20 40 L 26 40 A 1.0001 1.0001 0 0 0 27 39 L 27 29 C 27 28.170333 27.226394 27.345035 27.625 26.804688 C 28.023606 26.264339 28.526466 25.940057 29.482422 25.957031 C 30.468166 25.973981 30.989999 26.311669 31.384766 26.841797 C 31.779532 27.371924 32 28.166667 32 29 L 32 39 A 1.0001 1.0001 0 0 0 33 40 L 39 40 A 1.0001 1.0001 0 0 0 40 39 L 40 28.261719 C 40 25.300181 39.122788 22.95433 37.619141 21.367188 C 36.115493 19.780044 34.024172 19 31.8125 19 C 29.710483 19 28.110853 19.704889 27 20.423828 L 27 20 A 1.0001 1.0001 0 0 0 26 19 L 20 19 z M 12 21 L 16 21 L 16 33.134766 L 16 38 L 12 38 L 12 21 z M 21 21 L 25 21 L 25 22.560547 A 1.0001 1.0001 0 0 0 26.798828 23.162109 C 26.798828 23.162109 28.369194 21 31.8125 21 C 33.565828 21 35.069366 21.582581 36.167969 22.742188 C 37.266572 23.901794 38 25.688257 38 28.261719 L 38 38 L 34 38 L 34 29 C 34 27.833333 33.720468 26.627107 32.990234 25.646484 C 32.260001 24.665862 31.031834 23.983076 29.517578 23.957031 C 27.995534 23.930001 26.747519 24.626988 26.015625 25.619141 C 25.283731 26.611293 25 27.829667 25 29 L 25 38 L 21 38 L 21 21 z"></path>
+                </svg>
+
+            </a>
+        </div>
+       
+        <div class="tercio maspadding">
+   <a href="files/Curriculum Joel Pescador Febrero 2024 (1).pdf" title="curriculum" id="curriculum" target="_blank">  <button class="glowing-btn">
+          <span class="glowing-txt"
+            >C<span class="faulty-letter">U</span>RRICU<span
+              class="faulty-letter"
+              >LU</span
+            >M</span
+          >
+     </button></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/carrusel.js"></script>
+  </body>
+</html>

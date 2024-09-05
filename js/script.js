@@ -1,15 +1,13 @@
-const signs = document.getElementsByClassName("demotext");
-const randomIn = (min, max) =>
-  Math.floor(Math.random() * (max - min + 1) + min);
-
-const mixupInterval = (el) => {
-  const ms = randomIn(2000, 4000);
-  el.style.setProperty("--interval", `${ms}ms`);
-};
-
-signs.forEach((el) => {
-  mixupInterval(el);
-  el.addEventListener("webkitAnimationIteration", () => {
-    mixupInterval(el);
+const observador = new IntersectionObserver((entradas) => {
+  entradas.forEach((entrada) => {
+    console.log(entrada);
+    if (entrada.isIntersecting) {
+      entrada.target.classList.add("mostrar");
+    } else {
+      entrada.target.classList.remove("mostrar");
+    }
   });
 });
+
+const elementosOcultos = document.querySelectorAll(".oculto");
+elementosOcultos.forEach((elemento) => observador.observe(elemento));

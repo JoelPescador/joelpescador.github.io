@@ -5,6 +5,7 @@
   --glow-color: hsl(186 100% 69%);
   font-family: Montserrat, system-ui, sans-serif;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -14,21 +15,29 @@
 body {
   background-color: #2b4162;
   background-image: linear-gradient(315deg, #12100e 0%, #1a273a 100%);
+  overflow-x: hidden;
 }
+
 ul {
   list-style: none;
 }
 
-header {
-  width: 100%;
-  padding-top: 10vh;
+a {
+  color: #f5f5f5;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-/* Navbar styles */
+.dorado:hover {
+  color: #fdb515;
+}
+
 .navbar {
   display: flex;
-  justify-content: center; /* Center the items horizontally */
-  align-items: center; /* Center the items vertically */
+  justify-content: center;
+  align-items: center;
   float: right;
   margin-right: 3rem;
 }
@@ -38,26 +47,14 @@ header {
   margin-right: 10rem;
 }
 
-a {
-  color: #f5f5f5;
-  font-family: "Montserrat", sans-serif;
-  font-size: 2.25vw;
-  text-decoration: none;
-  font-weight: 600;
-}
-.dorado:hover {
-  color: #fdb515;
-}
 .elementosNav {
   display: inline-block;
   width: 20vw;
 }
 
-/* Main section styles */
 main {
   display: flex;
   width: 100%;
-  height: 100vh;
 }
 
 .glowing-btn {
@@ -73,11 +70,6 @@ main {
   font-size: 1em;
   font-weight: 900;
   letter-spacing: 1em;
-
-  -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
-    0px 0px 0.5em 0px var(--glow-color);
-  -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
-    0px 0px 0.5em 0px var(--glow-color);
   box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
     0px 0px 0.5em 0px var(--glow-color);
   animation: border-flicker 2s linear infinite;
@@ -86,10 +78,6 @@ main {
 .glowing-txt {
   float: left;
   margin-right: -0.8em;
-  -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
-    0 0 0.45em var(--glow-color);
-  -moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
-    0 0 0.45em var(--glow-color);
   text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color);
   animation: text-flicker 3s linear infinite;
 }
@@ -133,10 +121,7 @@ main {
   animation: none;
 }
 
-.glowing-btn:hover .glowing-txt {
-  animation: none;
-}
-
+.glowing-btn:hover .glowing-txt,
 .glowing-btn:hover .faulty-letter {
   animation: none;
   text-shadow: none;
@@ -153,92 +138,60 @@ main {
 }
 
 @keyframes faulty-flicker {
-  0% {
-    opacity: 0.1;
-  }
+  0%,
   2% {
     opacity: 0.1;
   }
-  4% {
-    opacity: 0.5;
-  }
+  4%,
   19% {
     opacity: 0.5;
   }
-  21% {
-    opacity: 0.1;
-  }
+  21%,
   23% {
     opacity: 1;
   }
-  80% {
+  80%,
+  83% {
     opacity: 0.5;
   }
-  83% {
-    opacity: 0.4;
-  }
-
   87% {
     opacity: 1;
   }
 }
 
 @keyframes text-flicker {
-  0% {
-    opacity: 0.1;
-  }
-
+  0%,
   2% {
-    opacity: 1;
-  }
-
-  8% {
     opacity: 0.1;
   }
-
+  8%,
   9% {
     opacity: 1;
   }
-
-  12% {
+  12%,
+  20% {
     opacity: 0.1;
   }
-  20% {
-    opacity: 1;
-  }
-  25% {
-    opacity: 0.3;
-  }
+  25%,
   30% {
     opacity: 1;
   }
-
-  70% {
+  70%,
+  72% {
     opacity: 0.7;
   }
-  72% {
-    opacity: 0.2;
-  }
-
-  77% {
-    opacity: 0.9;
-  }
+  77%,
   100% {
     opacity: 0.9;
   }
 }
 
 @keyframes border-flicker {
-  0% {
-    opacity: 0.1;
-  }
+  0%,
   2% {
-    opacity: 1;
-  }
-  4% {
     opacity: 0.1;
   }
-
+  4%,
   8% {
     opacity: 1;
   }
@@ -256,24 +209,11 @@ main {
   }
 }
 
-/* @media only screen and (max-width: 600px) {
-  .glowing-btn {
-    font-size: 1em;
-  }
-} */
-* {
-  margin: 0;
-  padding: 0;
-}
 canvas {
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   z-index: -2;
 }
-body {
-  overflow-x: hidden;
-}
+
 #canvas {
   position: fixed;
   inset: 0;
@@ -285,22 +225,24 @@ body {
   border-radius: 0.3rem;
   text-decoration: none;
 }
+
 .btn-light {
   background-color: transparent;
   border: 1px solid #ccc;
   color: white;
   font-size: 1rem;
 }
+
 .btn-light:hover {
   background-color: white;
   color: #2a4f5f;
 }
+
 #hero .buttons {
   animation: goUp 1s cubic-bezier(0, 0.55, 0.45, 1) 0.5s forwards;
   opacity: 0;
 }
 
-/* Examples section */
 .examples-section {
   margin-top: 5rem;
   color: white;
@@ -308,9 +250,11 @@ body {
   text-align: center;
   animation: goUp 1s cubic-bezier(0, 0.55, 0.45, 1) 0.7s forwards;
 }
+
 .examples-section p {
   margin-bottom: 1rem;
 }
+
 .examples {
   display: flex;
   gap: 2rem;
@@ -337,6 +281,7 @@ body {
     width: 100%;
   }
 }
+
 @keyframes goUp {
   0% {
     opacity: 0;
@@ -347,6 +292,7 @@ body {
     transform: translateY(0);
   }
 }
+
 @media screen and (max-width: 768px) {
   .examples {
     flex-direction: column;
@@ -359,9 +305,12 @@ body {
   width: 80%;
   margin: auto;
 }
+
 .alto {
   line-height: 6vh;
+  width: 100%;
 }
+
 .bold {
   font-weight: bold;
 }
@@ -370,48 +319,38 @@ body {
   font-size: 6rem;
   font-weight: 300;
   line-height: 120%;
-  margin-top: 6rem;
-  margin-bottom: 6rem;
+  margin-bottom: 10rem;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .medium {
   font-size: 3rem;
   font-weight: 600;
   text-align: justify;
+  line-height: 4rem;
 }
+
 .narrow {
   width: 70%;
   margin-left: 15%;
 }
-/* .demotext {
-  color: #ce1077;
-  text-shadow: -7px -4px 0px #f5f5f5, 7px 5px 0px #00ceaa;
-} */
 
 .neon {
   display: block;
   font-size: calc(1.5vw + 3vmax);
   line-height: 1.1;
-  --interval: 1s;
-
-  will-change: filter, color;
   color: yellow;
-  --color1: yellow;
-  --color2: lime;
-  --color3: green;
-  --color4: darkgreen;
   font-family: Monoton;
   font-weight: 100;
   text-shadow: 0 0 10px var(--color1), 0 0 20px var(--color2),
     0 0 40px var(--color3), 0 0 80px var(--color4);
+  line-height: 15vh;
+  margin-top: 5vh;
 }
 
 .neon .pink {
   color: hotpink;
-  --color1: hotpink;
-  --color2: hotpink;
-  --color3: magenta;
-  --color4: purple;
   text-shadow: 0 0 10px var(--color1), 0 0 20px var(--color2),
     0 0 40px var(--color3), 0 0 80px var(--color4);
 }
@@ -447,23 +386,722 @@ body {
   font-weight: 500;
   font-family: Montserrat, system-ui, sans-serif;
   display: inline;
+  width: 100%;
+  line-height: 30vh;
+}
+
+.caja50 {
   width: 50%;
+  height: 25vh;
+  float: left;
+  display: flex;
+  line-height: 5vh;
+}
+
+.caja100 {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 #mifoto {
+  width: 50%;
+  height: auto;
+  align-self: center;
+  margin-top: 30vh;
+  margin-left: 5vw;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  position: contain;
+}
+
+.achedos {
+  float: left;
+}
+
+.fotosCarrusel {
+  width: auto;
+  height: 100%;
+  border-radius: 8px;
+}
+
+button i {
+  font-size: 2rem;
+}
+
+button.botonCarru:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.wrap {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 200%; /* Twice the width of the container to accommodate two images */
+}
+
+.wrap img {
+  width: 100%; /* Image takes the full width of the container */
+  object-fit: cover;
+}
+
+/* Carousel Container */
+.carrusel {
+  position: relative;
+  overflow: hidden;
+  max-width: 45%; /* Control the carousel width */
+  margin: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the images horizontally */
+  margin-bottom: 5vh;
+}
+
+/* Ensure each list item has a fixed container for the image */
+.carousel-image-container {
   width: 100%;
-  height: 50vh;
+  height: 300px; /* Adjust the height based on your design requirements */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative; /* This is important for positioning the maximize button */
 }
-.caja50 {
+
+/* Images maintain their aspect ratio within the container */
+.carousel-image-container img.fotosCarrusel {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Use contain to ensure the entire image fits inside the container */
+  display: block;
+  margin: auto;
+}
+
+.carousel-image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: auto;
+}
+
+.fullscreen .carousel-image-container {
+  height: 100vh;
+  width: 100vw;
+}
+
+.carousel.fullscreen .button--expand {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 1001;
+}
+
+/* Adjust the button’s appearance if necessary */
+.carousel.fullscreen .button--expand svg {
+  width: 24px;
+  height: 24px;
+}
+
+.button--expand svg {
+  fill: black; /* Default SVG fill color */
+  width: 14px; /* Default size */
+  height: 14px; /* Default size */
+}
+
+/* Fullscreen mode styles */
+.fullscreen .button--expand {
+  background-color: black;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 50%; /* Keep the button circular */
+}
+
+.fullscreen .button--expand svg {
+  fill: white; /* Change SVG fill color to white */
+  width: 20px; /* Increased size */
+  height: 20px; /* Maintain aspect ratio */
+}
+
+/* Default styles for image containers */
+.carousel-image-container {
+  border: 2px solid white; /* Default border */
+  box-shadow: none; /* No shadow by default */
+}
+
+/* Fullscreen mode styles for image containers */
+.fullscreen .carousel-image-container {
+  border: 2px solid black; /* Black outline border */
+  box-shadow: 0 0 10px black; /* Add shadow for emphasis */
+}
+
+/* Fullscreen mode styles */
+.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000; /* Ensure it's above other content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Hide overflow */
+}
+
+.fullscreen .content {
+  position: relative;
+  width: 100vw; /* Carousel width */
+  height: 100vh; /* Carousel height */
+  background: rgba(0, 0, 0, 0.8); /* Background overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.fullscreen .content:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7); /* Black background with some transparency */
+  z-index: -1;
+  filter: blur(10px); /* Apply blur effect */
+  transform: translateX(calc((100vw - 80vw) / 2)); /* Center the blur effect */
+}
+
+/* Ensure the list and items fit properly */
+.fullscreen .list {
+  display: flex;
+  height: 100%;
+}
+
+.fullscreen .item {
+  flex: 1 0 100%;
+  height: 100vh;
+  padding: 10%;
+  padding-top: 5%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.list-wrapper {
+  overflow: hidden; /* Hide overflow of items */
+  width: 100%; /* Ensure the wrapper takes full width */
+}
+
+.list {
+  display: flex; /* Arrange items in a row */
+  transition: transform 0.5s ease; /* Smooth sliding transition */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.item {
+  min-width: 100%; /* Each item takes the full width of the container */
+  box-sizing: border-box; /* Handle padding and border */
+}
+
+/* Carousel Images */
+.fotosCarrusel {
+  width: 100%; /* Ensure images fit within their container */
+  height: auto; /* Maintain aspect ratio */
+  background-size: cover;
+}
+
+/* Buttons */
+.botonCarru {
+  position: absolute;
+  top: 50%;
+  width: 3rem;
+  height: 3rem;
+  background-color: rgba(
+    128,
+    128,
+    128,
+    0.4
+  ); /* Background color with transparency */
+  border: none;
+  cursor: pointer;
+  transform: translateY(-50%); /* Center vertically */
+  z-index: 10; /* Ensure buttons are on top of other elements */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+.button--previous {
+  left: 1rem; /* Positioned to the left */
+}
+
+.button--next {
+  right: 1rem; /* Positioned to the right */
+}
+
+.button--expand {
+  right: 1rem;
+  top: 90%; /* Adjusted top position to move button towards the bottom */
+  position: absolute; /* Ensure the button stays in place */
+  background: none; /* Removed default background */
+  border: none; /* Removed default border */
+  padding: 0.5rem; /* Added padding */
+}
+
+.button--expand.fullscreen {
+  right: 10%; /* Adjusted right position in fullscreen mode */
+  bottom: 20%;
+}
+
+.button--expand svg {
+  width: 1.5rem; /* Size of the SVG icon */
+  height: 1.5rem;
+  fill: #ffffff; /* Color of the SVG icon */
+}
+
+/* Button Hover Effects */
+.botonCarru:hover {
+  background-color: rgba(
+    128,
+    128,
+    128,
+    0.6
+  ); /* Slightly darker background on hover */
+}
+
+/* Arrow Buttons */
+.arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+.arrow--left {
+  border-width: 10px 12px 10px 0;
+  border-color: transparent #000 transparent transparent;
+  margin-right: 10px;
+}
+
+.arrow--right {
+  border-width: 10px 0 10px 12px;
+  border-color: transparent transparent transparent #000;
+  margin-left: 10px;
+}
+
+.arrow--left,
+.arrow--right {
+  cursor: pointer;
+}
+
+/* Styles for buttons in fullscreen mode */
+.fullscreen .arrow--left,
+.fullscreen .arrow--right {
+  border-color: transparent transparent transparent #fff; /* White arrows in fullscreen */
+}
+
+.fullscreen .arrow--left {
+  margin-right: 20px; /* Increased spacing from the edge */
+}
+
+.fullscreen .arrow--right {
+  margin-left: 20px; /* Increased spacing from the edge */
+}
+
+.botonCarru {
+  border-radius: 50%; /* Round buttons */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+.botonCarru i {
+  color: white; /* Icon color */
+}
+
+/* Button hover effects */
+.botonCarru:hover {
+  background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
+}
+
+/* Styles for navigation dots */
+.navigation-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px; /* Space between dots */
+}
+
+.navigation-dot {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent dots */
+  border-radius: 50%; /* Round dots */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+.navigation-dot.active {
+  background-color: #fff; /* Highlighted dot color */
+}
+
+.navigation-dot:hover {
+  background-color: rgba(255, 255, 255, 0.7); /* Dot color on hover */
+}
+#margen {
+  margin-top: 30vh;
+}
+.oculto {
+  opacity: 0;
+  transition: all 1s;
+  filter: blur(6px);
+  transform: translateX(-100%);
+}
+.mostrar {
+  opacity: 1;
+  transform: translateX(0);
+  filter: blur(0px);
+}
+
+/*Opcion de accesibilidad para oculto*/
+@media (prefers-reduced-motion) {
+  .oculto {
+    transition: none;
+  }
+}
+
+.elementosNav:nth-child(2) {
+  transition-delay: 200ms;
+}
+.elementosNav:nth-child(3) {
+  transition-delay: 400ms;
+}
+.elementosNav:nth-child(4) {
+  transition-delay: 600ms;
+}
+.fifty {
   width: 50%;
-  height: 25vh;
-  float: left;
 }
-.doble {
-  height: 50vh;
+
+/* Reset default styles */
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+:root {
+  --glow-color: hsl(186 100% 69%);
+  font-family: Montserrat, system-ui, sans-serif;
 }
-.caja50 {
-  width: 50%;
-  height: 25vh;
-  float: left;
+
+@media only screen and (max-width: 1200px) {
+  .elementosNav {
+    width: 25vw;
+  }
+
+  .headline {
+    font-size: 4rem;
+    margin-bottom: 5rem;
+  }
+
+  .medium {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+
+  .caja50 {
+    width: 100%;
+    height: auto;
+    float: none;
+    margin-bottom: 1rem;
+  }
+
+  #mifoto {
+    width: 70%;
+    margin-left: 0;
+  }
+
+  .titulo {
+    font-size: 7.5vw;
+  }
+
+  .carrusel {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .elementosNav {
+    width: 100%;
+    text-align: center;
+  }
+
+  .headline {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .medium {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .caja50 {
+    width: 100%;
+    height: auto;
+    float: none;
+  }
+
+  #mifoto {
+    width: 80%;
+    margin-left: 0;
+  }
+
+  .titulo {
+    font-size: 7.5vw;
+  }
+
+  .carrusel {
+    max-width: 90%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .glowing-btn {
+    font-size: 0.9em;
+    padding: 0.25em 0.75em;
+  }
+
+  .headline {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .medium {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
+
+  .caja50 {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  #mifoto {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .titulo {
+    font-size: 1.8vw;
+  }
+
+  .carrusel {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .glowing-btn {
+    font-size: 0.8em;
+    padding: 0.2em 0.5em;
+  }
+
+  .headline {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .medium {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .caja50 {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  #mifoto {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .titulo {
+    font-size: 7.5vw;
+  }
+
+  .carrusel {
+    max-width: 100%;
+  }
+
+  .navbar {
+    display: block;
+    margin: 1rem 0;
+  }
+
+  .elementosNav {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+canvas {
+  transform: translate3d(0, 0, 0);
+  z-index: -2;
+}
+
+#canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+}
+
+.btn {
+  padding: 1rem;
+  border-radius: 0.3rem;
+  text-decoration: none;
+}
+
+.btn-light {
+  background-color: transparent;
+  border: 1px solid #f5f5f5;
+  color: #f5f5f5;
+}
+
+.btn-light:hover {
+  background-color: #f5f5f5;
+  color: #2b4162;
+}
+
+.btn-dark {
+  background-color: #2b4162;
+  border: 1px solid #2b4162;
+  color: #f5f5f5;
+}
+
+.btn-dark:hover {
+  background-color: #1a273a;
+  border: 1px solid #1a273a;
+  color: #f5f5f5;
+}
+
+/* Responsive image */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive text sizes */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.75rem;
+}
+
+h5 {
+  font-size: 1.5rem;
+}
+
+h6 {
+  font-size: 1.25rem;
+}
+
+/* Layout adjustments */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.5rem;
+}
+
+.col {
+  flex: 1;
+  padding: 0.5rem;
+}
+
+@media (max-width: 1200px) {
+  .col-md-6 {
+    flex: 1 1 50%;
+  }
+}
+
+@media (max-width: 992px) {
+  .col-md-6 {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .col-sm-12 {
+    flex: 1 1 100%;
+  }
+
+  .headline {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .col-xs-12 {
+    flex: 1 1 100%;
+  }
+
+  .headline {
+    font-size: 1.5rem;
+  }
+}
+footer {
+  width: 100%;
+  height: 15vh;
+  background-color: rgb(55 58 84);
+}
+.border0 {
+  border-radius: 0;
+  padding: 0;
+}
+.tercio {
+  width: 33%;
+  text-align: center;
+  padding-top: 3vh;
+  height: 15vh;
+}
+.bi-envelope {
+  color: white;
+}
+.maspadding {
+  padding-top: 4.5vh;
+}
+#curriculum {
+  all: unset;
 }
