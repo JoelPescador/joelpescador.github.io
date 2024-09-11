@@ -4,6 +4,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const list = carousel.querySelector(".list");
     const items = carousel.querySelectorAll(".item");
     const expandButton = carousel.querySelector(".button--expand");
+    const previousNext = carousel.querySelectorAll(
+      ".button--previous, .button--next"
+    );
+
+    const mediaQueryCondition = window.matchMedia("(max-width: 576px)");
+
     const imageContainers = carousel.querySelectorAll(
       ".carousel-image-container"
     );
@@ -46,6 +52,9 @@ document.addEventListener("DOMContentLoaded", function () {
           container.style.width = "auto";
           container.style.border = "2px solid black";
           container.style.boxShadow = "0 0 10px black";
+          if (mediaQueryCondition.matches) {
+            container.style.height = "30%";
+          }
         });
 
         // Style expand button in fullscreen mode
@@ -57,6 +66,16 @@ document.addEventListener("DOMContentLoaded", function () {
         expandButton.style.padding = "0.5rem";
         expandButton.style.borderRadius = "50%";
         expandButton.style.zIndex = "1001";
+
+        if (mediaQueryCondition.matches) {
+          expandButton.style.right = "7%";
+          expandButton.style.top = "35%";
+
+          // Loop through the previous and next buttons and apply the top style
+          previousNext.forEach((button) => {
+            button.style.top = "15%";
+          });
+        }
 
         // Style SVG to be white and 25% bigger
         const svg = expandButton.querySelector("svg");
@@ -88,11 +107,17 @@ document.addEventListener("DOMContentLoaded", function () {
         expandButton.style.position = "";
         expandButton.style.bottom = "";
         expandButton.style.right = "";
+        expandButton.style.top = "";
         expandButton.style.backgroundColor = "";
         expandButton.style.border = "";
         expandButton.style.padding = "";
         expandButton.style.borderRadius = "";
         expandButton.style.zIndex = "";
+
+        // Reset the top style for the previous and next buttons
+        previousNext.forEach((button) => {
+          button.style.top = "";
+        });
 
         // Reset SVG styles
         const svg = expandButton.querySelector("svg");

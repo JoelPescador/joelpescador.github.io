@@ -482,7 +482,7 @@ button.botonCarru:hover {
 .carousel-image-container img.fotosCarrusel {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain; /* Use contain to ensure the entire image fits inside the container */
+  /* object-fit: contain; Use contain to ensure the entire image fits inside the container */
   display: block;
   margin: auto;
 }
@@ -617,22 +617,18 @@ button.botonCarru:hover {
 /* Carousel Images */
 .fotosCarrusel {
   width: 100%; /* Ensure images fit within their container */
-  height: auto; /* Maintain aspect ratio */
+
   background-size: cover;
 }
 
 /* Buttons */
 .botonCarru {
+  border-radius: 50%; /* Round buttons */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
   position: absolute;
   top: 50%;
   width: 3rem;
-  height: 3rem;
-  background-color: rgba(
-    128,
-    128,
-    128,
-    0.4
-  ); /* Background color with transparency */
+  height: 3rem; /* Background color with transparency */
   border: none;
   cursor: pointer;
   transform: translateY(-50%); /* Center vertically */
@@ -710,7 +706,10 @@ button.botonCarru:hover {
 }
 
 /* Styles for buttons in fullscreen mode */
-.fullscreen .arrow--left,
+.fullscreen .arrow--left {
+  border-color: transparent #fff transparent transparent;
+}
+
 .fullscreen .arrow--right {
   border-color: transparent transparent transparent #fff; /* White arrows in fullscreen */
 }
@@ -721,11 +720,6 @@ button.botonCarru:hover {
 
 .fullscreen .arrow--right {
   margin-left: 20px; /* Increased spacing from the edge */
-}
-
-.botonCarru {
-  border-radius: 50%; /* Round buttons */
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
 }
 
 .botonCarru i {
@@ -927,7 +921,6 @@ button.botonCarru:hover {
     margin: 0;
     width: 100%;
     text-align: center;
-    padding: 0 5% 0 5%;
   }
   .fifty {
     width: 100%;
@@ -948,17 +941,18 @@ button.botonCarru:hover {
   .medium {
     font-size: 1rem;
     line-height: 1.5rem;
+    padding: 1% 5% 1% 5%;
   }
 
   .caja50 {
     width: 100%;
-    height: auto;
+    height: 20vh;
     margin-bottom: 1rem;
   }
 
   #mifoto {
-    width: 100%;
-    margin-left: 0;
+    width: 50%;
+    margin: auto;
   }
 
   .titulo {
@@ -977,6 +971,22 @@ button.botonCarru:hover {
   .elementosNav {
     width: 100%;
     text-align: center;
+  }
+  .elementosNav > ul > li > a {
+    font-size: 3vh;
+  }
+  .neon {
+    font-size: 5.5vh;
+    margin: auto;
+  }
+  #margen {
+    margin-top: 10vh;
+  }
+  .alto {
+    padding-bottom: 5%;
+  }
+  .fotos {
+    margin: 0;
   }
 }
 
