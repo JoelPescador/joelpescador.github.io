@@ -205,7 +205,7 @@ main {
 
 @media only screen and (max-width: 600px) {
   .glowing-btn {
-    font-size: 1em;
+    font-size: 2vw;
   }
 }
 
@@ -341,7 +341,7 @@ canvas {
   font-size: calc(1.5vw + 3vmax);
   line-height: 1.1;
   color: yellow;
-  font-family: Monoton;
+  font-family: Arizonia;
   font-weight: 100;
   text-shadow: 0 0 10px var(--color1), 0 0 20px var(--color2),
     0 0 40px var(--color3), 0 0 80px var(--color4);
@@ -380,6 +380,11 @@ canvas {
   font-weight: 400;
   font-style: normal;
 }
+.arizonia-regular {
+  font-family: "Arizonia", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
 
 .titulo {
   font-size: 3vw;
@@ -403,6 +408,11 @@ canvas {
   flex-wrap: nowrap;
   align-items: center;
 }
+.caja100footer {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
 
 #mifoto {
   width: 50%;
@@ -412,7 +422,7 @@ canvas {
   margin-left: 5vw;
   border-radius: 50%;
   aspect-ratio: 1/1;
-  position: contain;
+  position: container;
 }
 
 .achedos {
@@ -669,7 +679,12 @@ button.botonCarru:hover {
     0.6
   ); /* Slightly darker background on hover */
 }
-
+.maspadding {
+  width: 33%;
+  text-align: center;
+  padding-top: 3vh;
+  height: 15vh;
+}
 /* Arrow Buttons */
 .arrow {
   display: inline-block;
@@ -906,8 +921,23 @@ button.botonCarru:hover {
 
 @media only screen and (max-width: 576px) {
   .glowing-btn {
-    font-size: 0.8em;
-    padding: 0.2em 0.5em;
+    font-size: 0.45em;
+  }
+  .blanco {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    padding: 0 5% 0 5%;
+  }
+  .fifty {
+    width: 100%;
+    font-size: 2.5vh;
+  }
+  .caja100 {
+    flex-direction: column;
+  }
+  .maspadding {
+    padding-top: 5.5vh;
   }
 
   .headline {
@@ -1099,9 +1129,27 @@ footer {
 .bi-envelope {
   color: white;
 }
-.maspadding {
-  padding-top: 4.5vh;
-}
+
 #curriculum {
   all: unset;
+}
+@keyframes growShrink {
+  0%,
+  20%,
+  40%,
+  60%,
+  80%,
+  100% {
+    transform: scale(1);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: scale(1.5);
+  }
+}
+.animacion {
+  animation: growShrink 10s;
 }
